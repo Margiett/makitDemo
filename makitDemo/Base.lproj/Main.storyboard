@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="makitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="q53-EC-Nma">
+                                <rect key="frame" x="-7" y="0.0" width="421" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="search by location " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gzI-6W-pwn">
+                                <rect key="frame" x="20" y="84" width="374" height="25"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gzI-6W-pwn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7Ps-bY-yqB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gzI-6W-pwn" secondAttribute="trailing" constant="20" id="Gtt-OJ-P1Y"/>
+                            <constraint firstItem="gzI-6W-pwn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="r4Z-Fb-L2a"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="q53-EC-Nma" id="3E9-vO-P7a"/>
+                        <outlet property="searchTextField" destination="gzI-6W-pwn" id="OEv-a0-opt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+        <!--Location Detail Controller-->
+        <scene sceneID="kFL-1t-piU">
+            <objects>
+                <viewController storyboardIdentifier="LocationDetailController" id="Phv-Vf-K1d" customClass="LocationDetailController" customModule="makitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tfe-4i-twH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5M-1D-efA">
+                                <rect key="frame" x="0.0" y="20" width="414" height="876"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tfZ-Lp-ahL">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="876"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k5i-HA-9az">
+                                            <rect key="frame" x="8" y="20" width="398" height="268"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="k5i-HA-9az" firstAttribute="leading" secondItem="tfZ-Lp-ahL" secondAttribute="leading" constant="8" id="B5H-Oy-1pC"/>
+                                        <constraint firstAttribute="trailing" secondItem="k5i-HA-9az" secondAttribute="trailing" constant="8" id="JHY-wg-dLm"/>
+                                        <constraint firstItem="k5i-HA-9az" firstAttribute="top" secondItem="tfZ-Lp-ahL" secondAttribute="top" constant="20" id="aVI-ra-jYI"/>
+                                        <constraint firstItem="k5i-HA-9az" firstAttribute="height" secondItem="tfZ-Lp-ahL" secondAttribute="height" multiplier="0.305936" id="zwM-Qt-Wgb"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="F5M-1D-efA" firstAttribute="trailing" secondItem="0yY-Gg-770" secondAttribute="trailing" id="G5g-80-o51"/>
+                            <constraint firstItem="F5M-1D-efA" firstAttribute="leading" secondItem="0yY-Gg-770" secondAttribute="leading" id="Gh4-gp-Q9y"/>
+                            <constraint firstAttribute="bottom" secondItem="F5M-1D-efA" secondAttribute="bottom" id="Ldx-Uu-d6g"/>
+                            <constraint firstItem="F5M-1D-efA" firstAttribute="top" secondItem="Tfe-4i-twH" secondAttribute="top" constant="20" symbolic="YES" id="aug-Ll-9Vi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0yY-Gg-770"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="k5i-HA-9az" id="lET-Sb-B7R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bi8-2Y-QOv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="-530.35714285714289"/>
+        </scene>
+    </scenes>
+</document>
